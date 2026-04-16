@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>houzhaohan的加密货币钱包</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background: #f8f9fa;
+            color: #222;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: #333;
+        }
+
+        .wallet {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .coin {
+            font-weight: 600;
+            min-width: 100px;
+        }
+
+        .address {
+            flex: 1;
+            word-break: break-all;
+            color: #555;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+
+        button {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        button:active {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>houzhaohan的加密货币钱包地址</h1>
+
+    <div class="wallet">
+        <span class="coin">BTC (Segwit)</span>
+        <span class="address">bc1q28nsm5w6pjlx0746wrw6w9qzsq4apj0pwvg28l</span>
+        <button onclick="copy(this)">复制</button>
+    </div>
+
+    <div class="wallet">
+        <span class="coin">ETH</span>
+        <span class="address">0xa41c6A1E232F00F48050E0762699B2B9E1505b6B</span>
+        <button onclick="copy(this)">复制</button>
+    </div>
+
+    <div class="wallet">
+        <span class="coin">SOL</span>
+        <span class="address">5jpYQCg8vNrED6cLRD2MiFv2RUNdBMrvZN8MioG1psv4</span>
+        <button onclick="copy(this)">复制</button>
+    </div>
+
+    <div class="wallet">
+        <span class="coin">BSC</span>
+        <span class="address">0xa41c6A1E232F00F48050E0762699B2B9E1505b6B</span>
+        <button onclick="copy(this)">复制</button>
+    </div>
+
+    <div class="wallet">
+        <span class="coin">DOGE</span>
+        <span class="address">DCcA4i52QPcfPbsHAQE1n4xYne2G8ciQ6y</span>
+        <button onclick="copy(this)">复制</button>
+    </div>
+
+    <p style="color: gray; text-align: center;">向我转账时建议先小额支付确定地址正确后转账</p>
+
+    <script>
+        // 一键复制功能
+        function copy(btn) {
+            const address = btn.previousElementSibling.textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                const original = btn.textContent;
+                btn.textContent = "已复制";
+                setTimeout(() => btn.textContent = original, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
